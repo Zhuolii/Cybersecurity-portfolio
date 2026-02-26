@@ -1,0 +1,95 @@
+What is the TCP/IP model? 
+
+The TCP/IP model  is a framework used to visualize how data is organized and transmitted across a network. 
+Le modèle TCP/IP est le standard de communication universel d'Internet. Contrairement au modèle OSI (théorique), le TCP/IP est opérationnel. Il structure la communication en 4 couches (Accès Réseau, Internet, Transport, Application). Pour un analyste SOC, c'est la carte qui permet de savoir où regarder pour analyser un paquet réseau malveillant."
+
+Analyse Profonde des 4 Couches (Ce qu'il faut dire)
+Pour briller en interview, lie chaque couche à une réalité de sécurité :
+
+Couche Accès Réseau (Network Access) : Elle gère le matériel et les adresses MAC.
+
+Focus SOC : C’est ici qu’on détecte l'ARP Spoofing.
+
+Couche Internet : C'est le royaume du protocole IP et de l'ICMP.
+
+Focus SOC : C’est là qu’on voit l’adresse IP source/destination. On y analyse le routage des paquets.
+
+Couche Transport : C'est ici que tournent TCP (fiable, avec connexion) et UDP (rapide, sans connexion).
+
+Focus SOC : On surveille les ports (ex: port 80 pour HTTP, 443 pour HTTPS). Un port inhabituel ouvert = menace potentielle.
+
+Couche Application : C'est ce que l'utilisateur voit (HTTP, FTP, SMTP, DNS).
+
+Focus SOC : C’est ici qu'on analyse les charges utiles (payloads) pour détecter des injections SQL ou du phishing.
+
+What is the OSI model?
+
+The OSI model stands for open systems interconnection (OSI) model. It is a standardized concept that describes the seven layers computers use to communicate and send data over the network. 
+
+La Réponse "Executive"
+"Le modèle OSI est un cadre de référence théorique en 7 couches qui standardise les fonctions de communication d'un réseau. Contrairement au TCP/IP (qui est le modèle d'implémentation), l'OSI sert de langage commun pour le dépannage et l'interopérabilité. Pour un analyste SOC, c'est l'outil ultime pour isoler où se situe une menace dans la pile réseau."
+
+Analyse Profonde des 7 Couches (La Vision de l'Analyste)
+1. Physique (Physical)
+Quoi : Les câbles, les ondes, les bits bruts.
+
+Risque SOC : Coupure de fibre, interception physique, "tapping".
+
+2. Liaison de données (Data Link)
+Quoi : Adresses MAC, commutateurs (switches), Ethernet.
+
+Risque SOC : ARP Spoofing, MAC Flooding. C'est ici qu'on identifie l'équipement local.
+
+3. Réseau (Network)
+Quoi : Adresses IP, routage, paquets.
+
+Risque SOC : IP Spoofing, attaques ICMP (Ping of Death).
+
+4. Transport
+Quoi : TCP/UDP, gestion de la connexion, segments.
+
+Risque SOC : Port scanning, SYN Flood (DDoS). C'est là qu'on vérifie si un service est "ouvert" sur le net.
+
+5. Session
+Quoi : Maintien de la connexion entre deux applications.
+
+Risque SOC : Session Hijacking (vol de session).
+
+6. Présentation
+Quoi : Traduction des données, chiffrement (SSL/TLS), compression.
+
+Risque SOC : Malwares cachés dans des fichiers encodés, problèmes de certificats SSL.
+
+7. Application
+Quoi : Ce que l'utilisateur manipule (HTTP, DNS, SMTP, SSH).
+
+Risque SOC : Injections SQL, Phishing, Cross-Site Scripting (XSS). C'est la couche la plus attaquée aujourd'hui.
+
+What are SIEM tools and what are they used for? 
+
+SIEM tools are security information and event management tools that are used by security professionals to identify and analyze security threats, risks, and vulnerabilities. 
+
+1. Qu'est-ce qu'un SIEM ? (La définition "Executive")
+Un SIEM est une solution de sécurité qui agrège, normalise et analyse en temps réel les données de logs provenant de toute l'infrastructure (serveurs, firewalls, terminaux, cloud). Son but n'est pas juste de stocker des données, mais de corréler des événements qui, isolés, semblent anodins, mais qui, ensemble, révèlent une cyberattaque.
+
+2. À quoi ça sert concrètement ? (Les 4 piliers)
+Collecte et Centralisation (Aggregation) : Au lieu de te connecter sur chaque serveur pour voir les logs, le SIEM rapatrie tout au même endroit.
+
+Corrélation : C'est le cerveau.
+
+Exemple : Une connexion échouée (Log A) + Une connexion réussie 5 min après (Log B) + Un transfert de fichier inhabituel (Log C) = Alerte d'exfiltration de données.
+
+Alerting & Dashboarding : Il transforme des millions de lignes de texte en alertes visuelles pour toi, l'analyste.
+
+Rétention et Conformité : Il garde les logs pendant des mois/années (obligatoire pour le RGPD ou les audits PCI-DSS).
+
+3. Les outils leaders du marché
+Dans les grandes entreprises, tu rencontreras principalement :
+
+Splunk : Le "poids lourd", extrêmement puissant pour la recherche de données.
+
+Microsoft Sentinel : Le leader du Cloud (Azure), très utilisé chez ceux qui sont "tout Microsoft".
+
+IBM QRadar / LogRhythm : Des solutions robustes et historiques.
+
+Elastic Stack (ELK) : Souvent utilisé pour sa flexibilité et sa rapidité.

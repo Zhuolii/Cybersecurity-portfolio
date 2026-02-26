@@ -1,0 +1,63 @@
+PLAN D'ACTION OPÉRATIONNEL : ANALYSTE SOC JUNIOR
+Objectif : Intégration et performance en environnement critique 
+
+Date : 25 Février 2026
+
+PHASE 1 : IMMERSION ET CARTOGRAPHIE DES RISQUES (JOUR 1 À 7)
+L'objectif est de comprendre ce qui rapporte de l'argent à l'entreprise pour savoir quoi défendre en priorité.
+
+Action 1 : Audit des "Crown Jewels" (Joyaux de la Couronne)
+
+Identifier l'emplacement des bases de données PII (Noms, adresses), financières (RIB, transactions) et identifiants (EIN, SSN).
+
+Documenter les flux de données : d'où viennent-elles et où sortent-elles ?
+
+Action 2 : Maîtrise de la PSSI (Politique de Sécurité)
+
+Lister les comportements interdits (ex: accès SSH direct, partage de comptes, usage de Shadow IT).
+
+Identifier les seuils d'alerte critiques définis par le management.
+
+Action 3 : Analyse de l'Architecture Réseau
+
+Étudier le schéma réseau : Firewalls, DMZ, micro-segmentation.
+
+Repérer les "Egress Points" (points de sortie vers Internet) pour surveiller l'exfiltration.
+
+PHASE 2 : MAÎTRISE DE L'ARSENAL TECHNIQUE (JOUR 8 À 21)
+Passer de la théorie des certifications à la pratique sur les outils réels.
+
+Action 4 : Expertise SIEM (Splunk, Microsoft Sentinel, Elastic)
+
+Maîtriser les requêtes sur logs bruts (Recherche par IP, User-Agent, Event IDs Windows type 4624).
+
+Créer des dashboards personnalisés pour visualiser les anomalies de trafic.
+
+Action 5 : Assimilation des Playbooks (Procédures)
+
+Mémoriser les étapes de réponse pour les 3 menaces majeures : Phishing, Brute Force, et Exfiltration.
+
+Savoir qui contacter immédiatement en cas d'incident critique (Escalade).
+
+Action 6 : Analyse des Faux Positifs (Réduction du Bruit)
+
+Étudier les alertes fermées par les seniors pour comprendre le "trafic normal" (bruit de fond).
+
+Proposer des optimisations pour filtrer les alertes inutiles et gagner du temps.
+
+PHASE 3 : PERFORMANCE ET THREAT INTELLIGENCE (JOUR 22+)
+Démontrer une vision de gérant : anticiper plutôt que subir.
+
+Action 7 : Analyse de Mouvements Latéraux
+
+S'entraîner à corréler des logs disparates pour reconstruire le parcours d'un utilisateur suspect dans le réseau.
+
+Action 8 : Veille Stratégique (Cyber Threat Intelligence)
+
+Surveiller quotidiennement les nouvelles vulnérabilités (CVE) et vérifier si l'infrastructure de l'entreprise est exposée.
+
+Action 9 : Reporting Haute Visibilité
+
+Rédiger un rapport hebdomadaire synthétique : "Nombre d'alertes traitées, Incidents critiques bloqués, Impact business évité".
+
+Note de l'expert : "Dans un SOC de haut niveau, on ne cherche pas des gens qui regardent des écrans, mais des gens qui comprennent la menace avant qu'elle ne devienne un incident."
